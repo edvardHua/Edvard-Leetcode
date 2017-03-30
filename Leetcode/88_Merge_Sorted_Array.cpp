@@ -1,12 +1,15 @@
 //
 // Created by edvard on 28/03/2017.
 //
+// Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.
+//
+
 #include <iostream>
 #include <vector>
 using namespace std;
 
 void my_merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
-    // 注意一个为 0 的情况
+    // check boundary value
     if(0 == m){
         nums1 = nums2;
         return;
@@ -28,8 +31,7 @@ void my_merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
         k ++;
     }
 
-    // 这里直接加上长度 m  或 n 比直接写 end() 要好
-    // 因为有时候 m 是表示前几位，而不是排序数组里面全部的元素
+    // Using variable n and m instead of end() function
     if(i == m){
         tmp.insert(tmp.begin() + k, nums2.begin() + j, nums2.begin() + n);
     }else {
