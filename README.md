@@ -2,4 +2,4 @@
 
 ---
 
-Solving leetcode by using python or c++
+Solving leetcode Problem by using python or c++
