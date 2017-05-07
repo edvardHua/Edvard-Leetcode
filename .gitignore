@@ -1,5 +1,3 @@
-CMakeLists.txt
-cmake-build-debug/
 .idea/
-out/
-main.cpp
+C++/test/
+Python/test/

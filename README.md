@@ -1,3 +1,5 @@
-### Traning
+### My-Leetcode
 
-C++ training code
+---
+
+Solving leetcode by using python or c++
