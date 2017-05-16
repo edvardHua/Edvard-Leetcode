@@ -48,6 +48,9 @@ class Tree(object):
 
         return elems
 
+    def convert(self, p):
+        return "^" + str(p.elem) + "#" + self.convert(p.lchild) + self.convert(p.rchild) if p else "$"
+
 if __name__ == '__main__':
     """主函数"""
     elems = range(10)
@@ -55,13 +58,15 @@ if __name__ == '__main__':
     for elem in elems:
         tree.add(elem)
 
-    elems = tree.level_queue(tree.root)
+    print tree.convert(tree.root)
 
-    # 需要考虑当val为 None 或者 null 的状态
-    levelMax = [elems[0]]
-    for i in range(1, int(ceil(log(len(elems), 2)))):
-        levelMax.append(max(elems[2**(i)-1:2**(i+1)-1]))
-
-    print levelMax
+    # elems = tree.level_queue(tree.root)
+    #
+    # # 需要考虑当val为 None 或者 null 的状态
+    # levelMax = [elems[0]]
+    # for i in range(1, int(ceil(log(len(elems), 2)))):
+    #     levelMax.append(max(elems[2**(i)-1:2**(i+1)-1]))
+    #
+    # print levelMax
 
 
